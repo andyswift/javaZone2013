@@ -20,7 +20,6 @@
     });
 
     $('.navbar-brand').on('click', function (e) {
-        e.preventDefault()
         var snares = [40,39,40,39,40,39,40,39,40];
         var kick = [36,-1,-1,-1,36,-1,-1,-1];
         drumSequence.say(snares);

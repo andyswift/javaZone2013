@@ -1,8 +1,10 @@
-(function ($, it, channel) {
+(function ($, it) {
     var socket = it.socket;
-    var KeyBoard = function (el) {
+    it.KeyBoard = function (el, options) {
+        var opts = options || {};
         this._el = el;
-        this.octave = 1;
+        this.channel = opts.channel || 15;
+        this.octave = opts.octave || 0;
         this.notes = {
             C: 60,
             Cs: 61,
@@ -38,7 +40,7 @@
         this.init();
     };
 
-    KeyBoard.prototype = function () {
+    it.KeyBoard.prototype = function () {
         var init = function () {
                 createKeys.call(this);
                 bindEvents.call(this);
@@ -108,15 +110,15 @@
                 });
             },
             getKey = function (message) {
-                return this._el.find('div[rel="' + message + '"]');
+                return this._el.find('div[rel="' + message.note + '"]');
             },
             noteDown = function (note) {
                 var octavedNote = getNoteInOctave.call(this, note);
-                socket.emit('notedown', {note: octavedNote, velocity: 127, channel: channel});
+                socket.emit('notedown', {note: octavedNote, velocity: 127, channel: this.channel});
             },
             noteUp = function (note) {
                 var octavedNote = getNoteInOctave.call(this, note);
-                socket.emit('noteup', {note: octavedNote, velocity: 127, channel: channel});
+                socket.emit('noteup', {note: octavedNote, velocity: 127, channel: this.channel});
             },
             getNoteInOctave = function (note) {
                 var octave = this.octave;
@@ -143,6 +145,4 @@
         };
     }();
 
-    var keyboard = new KeyBoard($('#keyboard'));
-
-})(jQuery, iterate, 16);
+})(jQuery, iterate);
