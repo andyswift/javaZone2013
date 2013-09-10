@@ -38,7 +38,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Iterate Voice Box</a>
+      <a class="navbar-brand" href="index.html">Iterate Voice Box</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -54,44 +54,41 @@
 </div>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
+<div class="jumbotron iterate invert">
   <div class="container">
     <h1>Web API</h1>
 
-    <p>Fetch all available words in the dictionary</p>
-    <ul>
-      <li>curl http://localhost:3000/api/words</li>
-    </ul>
     <p>Send a key down midi message</p>
-    <ul>
-      <li>curl -X POST -H "Content-Type: application/json" -d '{"note" :0, "velocity":1, "channel": 1}'
-        http://localhost:3000/api/midi/keydown
-      </li>
-    </ul>
+    <pre class="prettyprint">>curl -X POST -H "Content-Type: application/json" -d '{"note" :0, "velocity":1, "channel": 16}' http://localhost:3000/api/midi/keydown</pre>
     <p>Send a key up midi message</p>
-    <ul>
-      <li>curl -X POST -H "Content-Type: application/json" -d '{"note" :0, "velocity":1, "channel": 1}'
-        http://localhost:3000/api/midi/keyup
-      </li>
-    </ul>
+    <pre class="prettyprint">>curl -X POST -H "Content-Type: application/json" -d '{"note" :0, "velocity":1, "channel": 16}' http://localhost:3000/api/midi/keyup</pre>
+    <p>Fetch a dictionary of words which are available</p>
+    <pre class="prettyprint">>curl http://localhost:3000/api/words</pre>
+  </div>
+</div>
+
+<div class="jumbotron iterate">
+  <div class="container">
+    <h2>Keyboard</h2>
+
+    <p>Play a simple keyboard</p>
+
+    <p><a class="btn btn-default" href="keyboard.html">Keyboard &raquo;</a></p>
+
+  </div>
+</div>
+
+<div class="jumbotron iterate invert">
+  <div class="container">
+    <h2>Drums</h2>
+
+    <p>Play the drums</p>
+
+    <p><a class="btn btn-default" href="drums.html">Drums &raquo;</a></p>
   </div>
 </div>
 
 <div class="container">
-  <!-- Example row of columns -->
-  <div class="row">
-    <div class="col-lg-4">
-      <h2>Keyboard</h2>
-      <p>Play a simple keyboard</p>
-      <p><a class="btn btn-default" href="keyboard.html">Keyboard &raquo;</a></p>
-    </div>
-    <div class="col-lg-4">
-      <h2>Drums</h2>
-      <p>Play the drums</p>
-      <p><a class="btn btn-default" href="drums.html">Drums &raquo;</a></p>
-    </div>
-  </div>
-
   <hr>
 
   <footer>

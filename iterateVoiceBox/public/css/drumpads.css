@@ -2,14 +2,13 @@
 -------------------------------------------------------------- */
 
 #drums {
-    width:400px;
+    width:100%;
     clear:both;
     overflow:hidden;
-    height:200px;
-    margin-top:30px;
+    height:15em;
+    margin-top:2em;
     position: relative;
     cursor: pointer;
-    box-shadow:0 2px 3px rgba(0,0,0,0.3);
 }
 
 .key {
@@ -17,11 +16,12 @@
     height:25%;
     float:left;
     background:white;
-    border: 1px dotted black
+    border: 1px solid black;
+    box-shadow:0 2px 3px rgba(0,0,0,0.3);
 }
 
 .key:active,.key.active {
-    background:brown;
+    background:#006fac;
 }
 
 .sharp {
