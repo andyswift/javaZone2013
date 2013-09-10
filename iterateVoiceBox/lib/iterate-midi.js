@@ -39,7 +39,7 @@ exports.keyDown = function (socket) {
     return function (data) {
         var message = [143 + data.channel, data.note, data.velocity];
         _self.out.sendMessage(message);
-        socket && socket.broadcast.emit('playeddown', {'message': message});
+        socket && socket.broadcast.emit('playeddown', {'message': data});
     }
 
 };
@@ -56,7 +56,7 @@ exports.keyUp = function (socket) {
     return function (data) {
         var message = [127 + data.channel, data.note, data.velocity];
         _self.out.sendMessage(message);
-        socket && socket.broadcast.emit('playedup', {'message': message});
+        socket && socket.broadcast.emit('playedup', {'message': data});
     }
 };
 
