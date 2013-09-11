@@ -59,11 +59,11 @@
     <h1>Web API</h1>
 
     <p>Send a key down midi message</p>
-    <pre class="prettyprint">>curl -X POST -H "Content-Type: application/json" -d '{"note" :0, "velocity":1, "channel": 16}' http://localhost:3000/api/midi/keydown</pre>
+    <pre class="prettyprint">>curl -X POST -H "Content-Type: application/json" -d '{"note" :0, "velocity":1, "channel": 16}' http://10.15.2.80:3000/api/midi/keydown</pre>
     <p>Send a key up midi message</p>
-    <pre class="prettyprint">>curl -X POST -H "Content-Type: application/json" -d '{"note" :0, "velocity":1, "channel": 16}' http://localhost:3000/api/midi/keyup</pre>
+    <pre class="prettyprint">>curl -X POST -H "Content-Type: application/json" -d '{"note" :0, "velocity":1, "channel": 16}' http://10.15.2.80:3000/api/midi/keyup</pre>
     <p>Fetch a dictionary of words which are available</p>
-    <pre class="prettyprint">>curl http://localhost:3000/api/words</pre>
+    <pre class="prettyprint">>curl http://10.15.2.80:3000/api/words</pre>
   </div>
 </div>
 
